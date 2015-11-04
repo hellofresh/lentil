@@ -1,0 +1,19 @@
+{
+  "name": "gulp-lentil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellofresh/gulp-lentil.git"
+  },
+  "author": "Pepijn Senders <ps@hellofresh.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellofresh/gulp-lentil/issues"
+  },
+  "homepage": "https://github.com/hellofresh/gulp-lentil#readme"
+}

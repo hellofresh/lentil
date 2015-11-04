@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/hellofresh/gulp-lentil/issues"
   },
-  "homepage": "https://github.com/hellofresh/gulp-lentil#readme"
+  "homepage": "https://github.com/hellofresh/gulp-lentil#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "path": "^0.12.7"
+  }
 }

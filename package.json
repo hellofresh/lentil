@@ -16,8 +16,7 @@
     "url": "https://github.com/hellofresh/gulp-lentil/issues"
   },
   "homepage": "https://github.com/hellofresh/gulp-lentil#readme",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-concat": "^2.6.0",
@@ -37,5 +36,6 @@
     "karma": "^0.13.15",
     "path": "^0.12.7",
     "q": "^1.4.1"
-  }
+  },
+  "devDependencies": {}
 }

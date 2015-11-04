@@ -2,6 +2,67 @@
 
 This is the start of something great, new design and new FAST layout of dependency injection and overall client-based pages.
 
+## Setup
+
+Setting up Gulp Lentil is very easy, it will do most of the work for you, only thing you need to add is a comprehensive directory structure.
+
+### Installation
+
+Install `gulp-lentil` like this:
+
+```bash
+npm install --save-dev gulp-lentil;
+```
+
+### Configuration
+
+To configure `gulp-lentil` load the package into your gulpfile and initialize it like this:
+
+```js
+var Lentil = require('gulp-lentil');
+
+var lentil = new Lentil({
+    paths: {
+        modules: __dirname + '/modules',
+        libs: __dirname + '/libs',
+        dist: __dirname + '/dist',
+        tmp: __dirname + '/../../tmp'
+    },
+    tasks: {
+        'js': 'js',
+        'app': 'angular',
+        'sass': 'sass'
+    },
+    libs: {
+        'base': [
+            './libs/sugar/release/sugar-full.development.js',
+            './libs/jquery/dist/jquery.js',
+            './libs/angular/angular.js'
+        ]
+    }
+});
+
+lentil.start();
+```
+
+These are all the possible configuration options and if the assets are supplied well. It will run instantly out of the box. Just run `gulp help` to test it out. An example directory structure for this app would be:
+
+```
+gulpfile.js
+modules
+    base
+        js
+        app
+        sass
+libs
+    sugar
+    jquery
+    angular
+dist
+```
+
+This will generate the following files: `dist/base-libs.js`, `base-js.js`, `base-angular.js`, `base-sass.css`.
+
 ## Module development
 
 > Making every page as modular as possible with the least assets as possible
@@ -10,32 +71,32 @@ The creation of a module is almost always connected to the creation of a page, u
 
 Trying to captivate what is inside a module can be challenging, but one of the things you should try to hold onto is that every module should be able to run completely by itself without any help from other modules. Styling is a problem in this, that's why you should try to keep module-specific styling in the module, but add overall styling to the base module. This way we won't have double code (so actually it is a module by itself, with the base module).
 
-The development of a module is very very easy, just add a folder to the modules folder in `alice/alice/public/lentil/modules`, with your desired name. Within this modules folder you can define 3 different assets: js, app and sass. We could have added more, but this is enough for now.
+The development of a module is very very easy, just add a folder to the modules folder that you defined in the configuration, with your desired name. Within this modules folder you can define your defined assets.
 
 ### JS
 
-In this folder you could place any kind of JS file, whatever its structure or goal, as long as it belongs to the module. The Lentil compiler will eslint lint it and compile it to the dist folder as `{moduleName}.bundle.js`.
+In this folder you could place any kind of JS file, whatever its structure or goal, as long as it belongs to the module. The Lentil compiler will eslint lint it and compile it to the dist folder as `{moduleName}-js.js`.
 
-### App
+### Angular
 
-This folder is for the angular apps, we will add ng annotate to the compiler and the file will also end up in the dist folder as `{moduleName}.app.bundle.js`.
+This folder is for the angular apps, we will add ng annotate to the compiler and the file will also end up in the dist folder as `{moduleName}-angular.js`.
 
 ### Sass
 
-This folder is for the scss/sass files that belong to the module. Please try to name the base SASS file to the name of the module, this will nice compile to `{moduleName}.css` in the dist folder. The file will return an expanded version with nice comments and sourcemaps to help you with debugging.
+This folder is for the scss/sass files that belong to the module. Please try to name the base SASS file to the name of the module, this will nice compile to `{moduleName}-sass.css` in the dist folder. The file will return an expanded version with nice comments and sourcemaps to help you with debugging.
 
 ### Libs
 
-We also invented something nifty for the libs, if you check out your base folder of the lentil project, there is a `libs.json` file there. In wich you could see a structure like this:
+We also invented something nifty for the libs, if you want to add libs just add it to the lentil config. In which you could see a structure like this:
 
 ```
 {
-    "header": [
-        "./libs/modernizr/modernizr.js"
+    'header': [
+        './libs/modernizr/modernizr.js'
     ],
-    "base": [
-        "./libs/jquery/dist/jquery.js",
-        "./libs/angular/angular.js"
+    'base': [
+        './libs/jquery/dist/jquery.js',
+        './libs/angular/angular.js'
     ]
 }
 ```
@@ -66,7 +127,7 @@ And then run `preen` from the root folder. This will remove all the unneeded fil
 
 ## Compiling
 
-This project uses a smart compiler built on `gulp`, if you're running into any trouble, most of the logic is in `alice/alice/public/lentil/Lentil.js`. This compiler will index all the tasks automatically. To see which tasks are found simply run:
+This project uses a smart compiler built on `gulp`, if you're running into any trouble, most of the logic is in the lib folder of this project. This compiler will index all the tasks automatically. To see which tasks are found simply run:
 
 ```
 ./lentil.sh help

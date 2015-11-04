@@ -141,14 +141,6 @@ Every task has its watcher, and there are also combined watchers, if you want to
 ./lentil.sh watch
 ```
 
-### Deploying
-
-Lentil has one simple deploy script, basically what it does is look at the dist folder and compile everything it can compile. It will `uglify` the js files and `csso` and `minify-css` the css files. In the end it will give you some stats on how big your files have become. Run the deploy script by typing in the command:
-
-```
-./lentil.sh deploy
-```
-
 ### Bundle
 
 If you just want to bundle all js's with no extra compiling done, run:

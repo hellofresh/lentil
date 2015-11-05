@@ -8,18 +8,18 @@ Setting up Gulp Lentil is very easy, it will do most of the work for you, only t
 
 ### Installation
 
-Install `gulp-lentil` like this:
+Install `lentil` like this:
 
 ```bash
-npm install --save-dev gulp-lentil;
+npm install --save-dev lentil;
 ```
 
 ### Configuration
 
-To configure `gulp-lentil` load the package into your gulpfile and initialize it like this:
+To configure `lentil` load the package into your gulpfile and initialize it like this:
 
 ```js
-var Lentil = require('gulp-lentil');
+var Lentil = require('lentil');
 
 var lentil = new Lentil({
     paths: {

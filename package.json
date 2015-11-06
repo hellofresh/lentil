@@ -1,5 +1,5 @@
 {
-  "name": "gulp-lentil",
+  "name": "lentil",
   "version": "1.0.0",
   "description": "",
   "main": "lib/Lentil.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hellofresh/gulp-lentil.git"
+    "url": "git+https://github.com/hellofresh/lentil.git"
   },
   "author": "Pepijn Senders <ps@hellofresh.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hellofresh/gulp-lentil/issues"
+    "url": "https://github.com/hellofresh/lentil/issues"
   },
-  "homepage": "https://github.com/hellofresh/gulp-lentil#readme",
+  "homepage": "https://github.com/hellofresh/lentil#readme",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",

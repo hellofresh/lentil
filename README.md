@@ -1,3 +1,5 @@
+[ ![Codeship Status for hellofresh/lentil](https://codeship.com/projects/eb51dcc0-69e1-0133-1fba-6e257542035e/status?branch=master)](https://codeship.com/projects/114688)
+
 # Lentil
 
 This is the start of something great, new design and new FAST layout of dependency injection and overall client-based pages.

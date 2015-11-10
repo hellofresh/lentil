@@ -4,7 +4,8 @@
   "description": "",
   "main": "lib/Lentil.js",
   "scripts": {
-    "test": "node tests/runSpec.js"
+    "test": "istanbul cover --include-all-sources jasmine-node __tests__",
+    "test-watch": "jasmine-node __tests__ --autotest --watch ."
   },
   "repository": {
     "type": "git",
@@ -38,5 +39,8 @@
     "q": "^1.4.1",
     "sugar": "^1.4.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "istanbul": "^0.4.0",
+    "jasmine-node": "^1.14.5"
+  }
 }

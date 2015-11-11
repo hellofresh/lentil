@@ -4,19 +4,19 @@
 
 This is a small step-by-step guide to get lentil and gulp up and running, we will get into the configuration later in this file.
 
-#### 1. Installing gulp globally
+##### 1. Installing gulp globally
 
 ```bash
 $ npm install -g gulp
 ```
 
-#### 2. Installing Lentil and gulp
+##### 2. Installing Lentil and gulp
 
 ```bash
 $ npm install --save-dev lentil gulp
 ```
 
-#### 3. Create a `gulpfile.js` in your project
+##### 3. Create a `gulpfile.js` in your project
 
 This is the least you would need for a Lentil project to work. The paths don't even have to be there yet!
 
@@ -40,7 +40,7 @@ var lentil = new Lentil({
 lentil.start();
 ```
 
-#### 4. Run `gulp`
+##### 4. Run `gulp`
 
 Just run `gulp` in your project root:
 
@@ -83,5 +83,7 @@ Lentil is being lead by the directory structure provided. The directory structur
 |   |   |   |   |   ├── SubscribeComponentSpec.js
 |   |   |   ├── sass/
 |   |   |   |   ├── shop.scss
+|   |   |   |   ├── components/
+|   |   |   |   |   ├── _subscribe.scss
 ```
 

@@ -54,6 +54,9 @@ var lentil = new Lentil({
         files: [
             './libs/angular-mocks/angular-mocks.js'
         ]
+    },
+    plugins: { // Configure the different plugins that are used
+        eslint: require('./eslintconfig.json') // For example ESLint
     }
 });
 

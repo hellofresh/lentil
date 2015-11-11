@@ -16,9 +16,7 @@ You can overwrite the default configurations by adding plugins configuration to 
 ```js
 new Lentil({
   plugins: {
-    eslint: {
-      extends: 'eslint:recommended'
-    },
+    eslint: require('./eslintconfig.json'),
     ngAnnotate: {
       single_quotes: true
     }

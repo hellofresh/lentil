@@ -1,0 +1,9 @@
+{
+    "ingredients": {
+        "js": [
+            {
+                "plugin": "eslint",
+            }
+        ]
+    }
+}

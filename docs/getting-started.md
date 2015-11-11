@@ -70,6 +70,8 @@ Lentil is being lead by the directory structure provided. The directory structur
 |   |   |   |   ├── app.js
 |   |   |   |   ├── ProductCtrl.js
 |   |   |   |   ├── ProductFactory.js
+|   |   |   ├── templates/
+|   |   |   |   ├── product.html
 |   |   |   ├── tests/  
 |   |   |   |   ├── ProductCtrlSpec.js
 |   |   |   |   ├── ProductFactorySpec.js
@@ -87,3 +89,15 @@ Lentil is being lead by the directory structure provided. The directory structur
 |   |   |   |   |   ├── _subscribe.scss
 ```
 
+This example layout will generate a couple of files in the `dist` folder. For the different modules it will generate:
+
+##### base
+* `base.css`
+
+##### product
+* `product-angular.js`
+  * Will also add `modules/product/templates/product.html` to the `$templateCache`
+
+##### shop
+* `shop-angular.js`
+* `shop.css`

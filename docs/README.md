@@ -1,7 +1,7 @@
 # Lentil documentation
 
-* [Getting Started](getting-started.md) - How to get going with gulp
-* [API documentation](API.md) - Learn the ins and outs of using gulp
+* [Getting Started](getting-started.md) - How to get going with lentil
+* [Configuration](configuration.md) - Configure lentil
 
 ## License
 

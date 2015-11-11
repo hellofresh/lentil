@@ -11,7 +11,11 @@
 
 ## What is Lentil?
 
-Lentil is a tool that runs next to gulp to make setting up your new projects less painful. It will simply compile your scripts out of the box! It will use all the popular compiling implementations for your website's frontend assets (ingredients). Currently it will compile plain JS, sass or scss and angular apps (`templateCache` is also included). Write us an issue of you feel like something is missing!
+Lentil is a tool that runs next to gulp to make setting up your new projects less painful. It will simply compile your scripts out of the box! It will use all the popular compiling implementations for your website's frontend assets (ingredients). Currently it will compile plain JS, sass or scss and angular apps (`templateCache` is also included). Write us an issue or a Pull Request of you feel like something is missing!
+
+## Why use Lentil?
+
+Lentil is built so that a project, or several projects keep the same compiling and conventions. It is very easy to setup and it's using a modular approach. This will simplify the ability to create several modules, without having to worry about an ever growing `gulpfile` all that will be growing is your file tree!
 
 ## Documentation
 

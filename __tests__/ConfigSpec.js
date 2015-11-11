@@ -52,4 +52,30 @@ describe('ConfigSpec', function() {
         expect(config.get('nothere.nothere', 'test')).toEqual('test');
     });
 
+    it('should merge default config', function() {
+        var Config = require('../lib/Config');
+
+        var config = new Config({
+            test: {
+                a: 'b'
+            }
+        });
+
+        var merged = config.mergeDefault('test', {
+            a: 'c'
+        });
+
+        expect(merged.a).toEqual('b');
+
+        var config = new Config({
+            test: {}
+        });
+
+        var merged = config.mergeDefault('test', {
+            a: 'c'
+        });
+
+        expect(merged.a).toEqual('c');
+    });
+
 });

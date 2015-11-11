@@ -13,6 +13,17 @@ The angular pipeline looks like this:
 
 You can overwrite the default configurations by adding plugins configuration to your `gulpfile.js` file.
 
+Default configuration:
+```js
+new Lentil({
+  plugins: {
+    eslint: {},
+    ngAnnotate: {}
+  }
+});
+```
+
+Example configuration:
 ```js
 new Lentil({
   plugins: {

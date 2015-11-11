@@ -7,7 +7,7 @@ The angular templates pipeline looks like this:
 - [HTMLHint](https://www.npmjs.com/package/gulp-htmlhint)
 - [Angular Templatecache](https://www.npmjs.com/package/gulp-angular-templatecache)
 
-## Example configurations in the `gulpfile.js`:
+## Example configurations in the `gulpfile.js`
 
 You can overwrite the default configurations by adding plugins configuration to your `gulpfile.js` file. The `moduleName` of angular templates defaults to `lentil.{moduleName}` and the root to `lentil/{moduleName}/templates`.
 

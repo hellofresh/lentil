@@ -21,7 +21,7 @@ Lentil is built so that a project, or several projects keep the same compiling a
 
 For Lentil's API docs see the [documentation page](/docs/README.md).
 
-### Example `gulpfile.js`
+##### Example `gulpfile.js`
 
 ```js
 // Require the lentil package from the NPM package manager

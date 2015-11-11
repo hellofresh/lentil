@@ -15,9 +15,7 @@ Default configuration:
 ```js
 new Lentil({
   plugins: {
-    htmlhint: {
-      'tagname-lowercase': true
-    },
+    htmlhint: {},
     angularTemplatecache: {
       module: 'lentil.{name}'.assign({
           name: options.name

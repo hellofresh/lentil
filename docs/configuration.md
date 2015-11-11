@@ -1,4 +1,4 @@
-## Configuration
+# Configuration
 
 Lentil is being lead by the directory structure provided. The directory structure says everything about the app and naming should be considered twice to make it as comprehensible as possible. This is an example directory structure:
 
@@ -52,3 +52,6 @@ This example layout will generate a couple of files in the `dist` folder. For th
 * `shop-angular.js`
 * `shop.css`
 
+## Help
+
+After configuring you could run `$ gulp help` to see which tasks have been created.

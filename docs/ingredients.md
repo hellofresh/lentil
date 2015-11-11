@@ -11,4 +11,3 @@ To read more about which plugins and how to configure them, read one of the foll
 * [Karma](ingredients/karma.md)
 * [Library files](ingredients/libs.md)
 * [SASS](ingredients/sass.md)
-* [Watch pipeline](ingredients/watch.md)

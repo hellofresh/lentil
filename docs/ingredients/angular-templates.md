@@ -11,6 +11,27 @@ The angular templates pipeline looks like this:
 
 You can overwrite the default configurations by adding plugins configuration to your `gulpfile.js` file. The `moduleName` of angular templates defaults to `lentil.{moduleName}` and the root to `lentil/{moduleName}/templates`.
 
+Default configuration:
+```js
+new Lentil({
+  plugins: {
+    htmlhint: {
+      'tagname-lowercase': true
+    },
+    angularTemplatecache: {
+      module: 'lentil.{name}'.assign({
+          name: options.name
+      }),
+      filename: TEMPLATE_TMP_FILE,
+      root: 'lentil/{name}/templates'.assign({
+        name: options.name
+      })
+    }
+  }
+});
+```
+
+Example configuration:
 ```js
 new Lentil({
   plugins: {

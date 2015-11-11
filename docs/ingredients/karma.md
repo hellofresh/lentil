@@ -20,3 +20,19 @@ var lentil = new Lentil({
   }
 });
 ```
+
+We will set the `singleRun` and `action` options ourselves. For `karma-lentil` the configuration is:
+
+```js
+{
+  action: 'watch'
+}
+```
+
+And for `karma-lentil-ci` the configuration is:
+
+```js
+{
+  singleRun: true
+}
+```

@@ -15,7 +15,9 @@ Default configuration:
 ```js
 new Lentil({
   plugins: {
-    htmlhint: {},
+    htmlhint: {
+        'doctype-first': false
+    },
     angularTemplatecache: {
       module: 'lentil.{name}'.assign({
           name: options.name

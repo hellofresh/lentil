@@ -4,11 +4,11 @@ Lentil uses ingredients to compile your assets. Examples of ingredients are: `an
 
 To read more about which plugins and how to configure them, read one of the following README files:
 
-* [Angular templates](angular-templates.md)
-* [Angular](angular.md)
-* [Deploy](deploy.md)
-* [JS](js.md)
-* [Karma](karma.md)
-* [Library files](libs.md)
-* [SASS](sass.md)
-* [Watch pipeline](watch.md)
+* [Angular templates](ingredients/angular-templates.md)
+* [Angular](ingredients/angular.md)
+* [Deploy](ingredients/deploy.md)
+* [JS](ingredients/js.md)
+* [Karma](ingredients/karma.md)
+* [Library files](ingredients/libs.md)
+* [SASS](ingredients/ass.md)
+* [Watch pipeline](ingredients/watch.md)

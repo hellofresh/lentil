@@ -41,6 +41,7 @@
     "sugar": "^1.4.1"
   },
   "devDependencies": {
+    "htmlhint-stylish": "^1.0.3",
     "istanbul": "^0.4.0",
     "jasmine-node": "^1.14.5"
   }

@@ -13,7 +13,7 @@ $ npm install -g gulp
 ##### 2. Installing Lentil and gulp
 
 ```bash
-$ npm install --save-dev lentil gulp
+$ npm install --save-dev hf-lentil gulp
 ```
 
 ##### 3. Create a `gulpfile.js` in your project

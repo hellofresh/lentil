@@ -2,6 +2,7 @@
 
 * [Getting Started](getting-started.md) - How to get going with lentil
 * [Configuration](configuration.md) - Configure lentil
+* [Ingredients](ingredients.md) - Which ingredients does Lentil use to compile your assets
 
 ## License
 

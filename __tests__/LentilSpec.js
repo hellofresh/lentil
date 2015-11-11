@@ -31,7 +31,7 @@ describe('LentilSpec', function() {
 
         var lentil = new Lentil(configObject);
 
-        expect(lentil.parseModule('test')).not.toBeUndefined();
+        expect(lentil.parseModule('test')).toBeUndefined();
     });
 
     it('should parse libs', function() {
@@ -48,7 +48,7 @@ describe('LentilSpec', function() {
 
         var lentil = new Lentil(configObject);
 
-        expect(lentil.parseLibs()).not.toBeUndefined();
+        expect(lentil.parseLibs()).toBeUndefined();
     });
 
     it('should start', function() {

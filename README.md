@@ -29,7 +29,7 @@ var lentil = new Lentil({
         modules: __dirname + '/modules', // The path to where your different modules
         libs: __dirname + '/libs', // Where are your libs situated
         dist: __dirname + '/dist', // Where do you want the compiled files to end up
-        tmp: __dirname + '/../tmp' // The temporary files that will be generated and removed need a location too
+        tmp: __dirname + '/../tmp' // Location for the short lived files
     },
     tasks: { // Here we map the tasks with the folders inside the module
         'js': 'js', // So the plain JS files will be in the js folder

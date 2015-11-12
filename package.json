@@ -2,7 +2,10 @@
   "name": "hf-lentil",
   "version": "1.0.0",
   "description": "Smart and modular gulp wrapper",
-  "repository": "hellofresh/lentil",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellofresh/lentil.git"
+  },
   "tags": [
     "build",
     "stream",
@@ -19,10 +22,6 @@
     "test": "istanbul cover --include-all-sources jasmine-node __tests__",
     "test-watch": "jasmine-node __tests__ --autotest --watch ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hellofresh/lentil.git"
-  },
   "author": "Pepijn Senders <ps@hellofresh.com>",
   "license": "Creative Commons",
   "bugs": {
@@ -30,6 +29,7 @@
   },
   "homepage": "https://github.com/hellofresh/lentil",
   "dependencies": {
+    "eslint-plugin-angular": "^0.13.0",
     "gulp": "^3.9.0",
     "gulp-add-src": "^0.2.0",
     "gulp-angular-templatecache": "^1.8.0",

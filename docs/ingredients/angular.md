@@ -17,7 +17,15 @@ Default configuration:
 ```js
 new Lentil({
   plugins: {
-    eslint: {},
+    eslint: {
+        plugins: [
+            'angular'
+        ],
+        rules: {
+            'angular/module-setter': 0,
+            'angular/module-getter': 0
+        }
+    },
     ngAnnotate: {}
   }
 });

@@ -9,6 +9,12 @@
 
 [ ![Codeship Status for hellofresh/lentil](https://codeship.com/projects/eb51dcc0-69e1-0133-1fba-6e257542035e/status?branch=master)](https://codeship.com/projects/114688)
 
+## How to install?
+
+```bash
+$ npm install --save-dev hf-lentil
+```
+
 ## What is Lentil?
 
 Lentil is a tool that runs next to gulp to make setting up your new projects less painful. It will simply compile your scripts out of the box! It will use all the popular compiling implementations for your website's frontend assets (ingredients). Currently it will compile plain JS, sass or scss and angular apps (`templateCache` is also included). Write us an issue or a Pull Request of you feel like something is missing!

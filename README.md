@@ -31,7 +31,7 @@ For Lentil's API docs see the [documentation page](/docs/README.md).
 
 ```js
 // Require the lentil package from the NPM package manager
-var Lentil = require('lentil');
+var Lentil = require('hf-lentil');
 
 // Initialize the Lentil object with a config object that will take of the rest
 var lentil = new Lentil({

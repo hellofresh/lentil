@@ -37,7 +37,7 @@ var Lentil = require('hf-lentil');
 var lentil = new Lentil({
     paths: {
         modules: __dirname + '/modules', // The path to where your different modules
-        libs: __dirname + '/libs', // Where are your libs situated
+        libs: __dirname + '/libs', // Where are your libs situated (for SASS includes)
         dist: __dirname + '/dist', // Where do you want the compiled files to end up
         tmp: __dirname + '/../tmp' // Location for the short lived files
     },
@@ -48,12 +48,12 @@ var lentil = new Lentil({
     },
     libs: { // Here we define our different libs files
         'base': [
-            './libs/sugar/release/sugar-full.development.js',
-            './libs/jquery/dist/jquery.js',
-            './libs/angular/angular.js'
+            __dirname + '/libs/sugar/release/sugar-full.development.js',
+            __dirname + '/libs/jquery/dist/jquery.js',
+            __dirname + '/libs/angular/angular.js'
         ],
         'touch': [
-            './libs/angular-touch/angular-touch.js'
+            __dirname + '/libs/angular-touch/angular-touch.js'
         ]
     },
     karma: { // Define the config for Karma here

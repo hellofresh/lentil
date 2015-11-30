@@ -9,6 +9,12 @@
 
 [ ![Codeship Status for hellofresh/lentil](https://codeship.com/projects/eb51dcc0-69e1-0133-1fba-6e257542035e/status?branch=master)](https://codeship.com/projects/114688)
 
+## How to install?
+
+```bash
+$ npm install --save-dev hf-lentil
+```
+
 ## What is Lentil?
 
 Lentil is a tool that runs next to gulp to make setting up your new projects less painful. It will simply compile your scripts out of the box! It will use all the popular compiling implementations for your website's frontend assets (ingredients). Currently it will compile plain JS, sass or scss and angular apps (`templateCache` is also included). Write us an issue or a Pull Request of you feel like something is missing!
@@ -25,13 +31,13 @@ For Lentil's API docs see the [documentation page](/docs/README.md).
 
 ```js
 // Require the lentil package from the NPM package manager
-var Lentil = require('lentil');
+var Lentil = require('hf-lentil');
 
 // Initialize the Lentil object with a config object that will take of the rest
 var lentil = new Lentil({
     paths: {
         modules: __dirname + '/modules', // The path to where your different modules
-        libs: __dirname + '/libs', // Where are your libs situated
+        libs: __dirname + '/libs', // Where are your libs situated (for SASS includes)
         dist: __dirname + '/dist', // Where do you want the compiled files to end up
         tmp: __dirname + '/../tmp' // Location for the short lived files
     },
@@ -42,12 +48,12 @@ var lentil = new Lentil({
     },
     libs: { // Here we define our different libs files
         'base': [
-            './libs/sugar/release/sugar-full.development.js',
-            './libs/jquery/dist/jquery.js',
-            './libs/angular/angular.js'
+            __dirname + '/libs/sugar/release/sugar-full.development.js',
+            __dirname + '/libs/jquery/dist/jquery.js',
+            __dirname + '/libs/angular/angular.js'
         ],
         'touch': [
-            './libs/angular-touch/angular-touch.js'
+            __dirname + '/libs/angular-touch/angular-touch.js'
         ]
     },
     karma: { // Define the config for Karma here

@@ -21,7 +21,7 @@ $ npm install --save-dev hf-lentil gulp
 This is the least you would need for a Lentil project to work. The paths don't even have to be there yet!
 
 ```js
-var Lentil = require('lentil');
+var Lentil = require('hf-lentil');
 
 var lentil = new Lentil({
   paths: {
@@ -42,10 +42,10 @@ lentil.start();
 
 ##### 4. Run `gulp`
 
-Just run `gulp` in your project root:
+Just run `gulp watch` in your project root:
 
 ```bash
-$ gulp
+$ gulp watch
 ```
 
 ### Next steps

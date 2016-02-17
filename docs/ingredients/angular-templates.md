@@ -18,6 +18,10 @@ new Lentil({
     htmlhint: {
         'doctype-first': false
     },
+    arialinter: {
+        level: 'AA',
+        templates: true
+    },
     angularTemplatecache: {
       module: 'lentil.{name}'.assign({
           name: options.name

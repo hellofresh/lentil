@@ -6,6 +6,7 @@ The angular templates pipeline looks like this:
 
 - [HTMLHint](https://www.npmjs.com/package/gulp-htmlhint)
 - [Angular Templatecache](https://www.npmjs.com/package/gulp-angular-templatecache)
+- [AriaLinter](https://www.npmjs.com/package/gulp-arialinter)
 
 ### Example configurations in the `gulpfile.js`
 

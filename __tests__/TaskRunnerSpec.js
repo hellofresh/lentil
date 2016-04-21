@@ -3,7 +3,9 @@ describe('TaskRunnerSpec', function() {
     it('should initialize object', function() {
         var TaskRunner = require('../lib/TaskRunner');
 
-        var taskRunner = new TaskRunner('watch');
+        var gulp = require('gulp');
+
+        var taskRunner = new TaskRunner(gulp, 'watch');
 
         expect(taskRunner.task).toEqual('watch');
     });
@@ -12,20 +14,24 @@ describe('TaskRunnerSpec', function() {
         var TaskContainer = require('../lib/TaskContainer');
         var TaskRunner = require('../lib/TaskRunner');
 
-        var taskRunner = new TaskRunner('watch');
+        var gulp = require('gulp');
+
+        var taskRunner = new TaskRunner(gulp, 'watch');
 
         spyOn(taskRunner, 'addWatchToParseTask');
         spyOn(TaskContainer, 'add');
 
         taskRunner.parse({}, {});
-        expect(TaskContainer.add).toHaveBeenCalledWith('undefined-watch', jasmine.any(Function));
+        expect(TaskContainer.add).toHaveBeenCalledWith(gulp, 'undefined-watch', jasmine.any(Function));
     });
 
     it('should fail to parse task', function() {
         var TaskContainer = require('../lib/TaskContainer');
         var TaskRunner = require('../lib/TaskRunner');
 
-        var taskRunner = new TaskRunner('nothing');
+        var gulp = require('gulp');
+
+        var taskRunner = new TaskRunner(gulp, 'nothing');
 
         spyOn(taskRunner, 'addWatchToParseTask');
         spyOn(TaskContainer, 'add');
@@ -39,14 +45,16 @@ describe('TaskRunnerSpec', function() {
         var TaskContainer = require('../lib/TaskContainer');
         var TaskRunner = require('../lib/TaskRunner');
 
+        var gulp = require('gulp');
+
         spyOn(TaskContainer, 'add');
         spyOn(TaskRunner.paths, 'js').andReturn(jasmine.any(Function));
 
-        var taskRunner = new TaskRunner('js');
+        var taskRunner = new TaskRunner(gulp, 'js');
         taskRunner.addWatchToParseTask('whatever', {}, {});
 
         expect(TaskRunner.paths.js).toHaveBeenCalledWith({}, {});
-        expect(TaskContainer.add).toHaveBeenCalledWith('whatever-watch', jasmine.any(Function), ['whatever']);
+        expect(TaskContainer.add).toHaveBeenCalledWith(gulp, 'whatever-watch', jasmine.any(Function), ['whatever']);
     });
 
 });

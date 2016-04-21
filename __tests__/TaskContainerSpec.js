@@ -2,17 +2,19 @@ describe('TaskContainerSpec', function() {
 
     it('should add a task', function() {
         var TaskContainer = require('../lib/TaskContainer');
+        var gulp = require('gulp');
 
-        TaskContainer.add('test123');
+        TaskContainer.add(gulp, 'test123');
 
         expect(TaskContainer.container.test123).not.toBeUndefined();
     });
 
     it('should throw an error on existing task', function() {
         var TaskContainer = require('../lib/TaskContainer');
+        var gulp = require('gulp');
 
         expect(function() {
-            TaskContainer.add('test123');
+            TaskContainer.add(gulp, 'test123');
         }).toThrow(new Error('test123 is already present in the TaskContainer.'));
     });
 

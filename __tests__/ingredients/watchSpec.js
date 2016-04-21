@@ -6,7 +6,7 @@ describe('ingredients/watchSpec', function() {
 
         var config = new Config({});
 
-        expect(watch(config, {})).toEqual(jasmine.any(Function));
+        expect(watch(require('gulp'), config, {})).toEqual(jasmine.any(Function));
     });
 
 });

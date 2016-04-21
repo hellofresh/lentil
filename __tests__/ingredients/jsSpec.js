@@ -13,7 +13,7 @@ describe('ingredients/jsSpec', function() {
             }
         });
 
-        expect(typeof js(config, {
+        expect(typeof js(require('gulp'), config, {
             name: 'test'
         })()).toEqual('object');
         expect(TaskRunner.paths.js).toHaveBeenCalled();

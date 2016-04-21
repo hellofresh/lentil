@@ -11,7 +11,7 @@ describe('ingredients/deploySpec', function() {
             }
         });
 
-        deploy(config, {
+        deploy(require('gulp'), config, {
             name: 'test'
         })(function() {
             expect(true).toBe(true);

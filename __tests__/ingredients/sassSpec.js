@@ -13,7 +13,7 @@ describe('ingredients/sassSpec', function() {
             }
         });
 
-        expect(typeof sass(config, {
+        expect(typeof sass(require('gulp'), config, {
             name: 'test'
         })()).toEqual('object');
         expect(TaskRunner.paths.sass).toHaveBeenCalled();

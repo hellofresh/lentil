@@ -3,7 +3,7 @@ describe('DeployerSpec', function() {
     it('should create deployer object', function() {
         var Deployer = require('../lib/Deployer');
 
-        var deployer = new Deployer(['test']);
+        var deployer = new Deployer(require('gulp'), ['test']);
 
         expect(deployer.basicTasks).toEqual(['test']);
     });
@@ -15,17 +15,17 @@ describe('DeployerSpec', function() {
 
         spyOn(TaskContainer, 'add');
 
-        var deployer = new Deployer(['test']);
+        var deployer = new Deployer(require('gulp'), ['test']);
 
         var config = {};
         deployer.deployTask(config);
 
-        expect(TaskContainer.add).toHaveBeenCalledWith('deploy', jasmine.any(Function), ['test']);
+        expect(TaskContainer.add).toHaveBeenCalledWith(require('gulp'), 'deploy', jasmine.any(Function), ['test']);
 
         spyOn(TaskRunner.ingredients, 'deploy');
         deployer.deployTask(config);
 
-        expect(TaskRunner.ingredients.deploy).toHaveBeenCalledWith(config);
+        expect(TaskRunner.ingredients.deploy).toHaveBeenCalledWith(require('gulp'), config);
     });
 
 });

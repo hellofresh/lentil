@@ -11,19 +11,20 @@ describe('TesterSpec', function() {
         var Tester = require('../lib/Tester');
         var TaskContainer = require('../lib/TaskContainer');
         var TaskRunner = require('../lib/TaskRunner');
+        var gulp = gulp;
 
         spyOn(TaskContainer, 'add');
         spyOn(TaskRunner.ingredients, 'karma');
 
-        var tester = new Tester();
+        var tester = new Tester(gulp);
 
         tester.testTask({});
-        expect(TaskContainer.add).toHaveBeenCalledWith('karma-lentil', undefined);
-        expect(TaskContainer.add).toHaveBeenCalledWith('karma-lentil-ci', undefined);
-        expect(TaskRunner.ingredients.karma).toHaveBeenCalledWith({}, {
+        expect(TaskContainer.add).toHaveBeenCalledWith(gulp, 'karma-lentil', undefined);
+        expect(TaskContainer.add).toHaveBeenCalledWith(gulp, 'karma-lentil-ci', undefined);
+        expect(TaskRunner.ingredients.karma).toHaveBeenCalledWith(gulp, {}, {
             action: 'watch'
         });
-        expect(TaskRunner.ingredients.karma).toHaveBeenCalledWith({}, {
+        expect(TaskRunner.ingredients.karma).toHaveBeenCalledWith(gulp, {}, {
             singleRun: true
         });
     });

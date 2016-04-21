@@ -8,7 +8,8 @@ describe('LentilSpec', function() {
         spyOn(FileSystem, 'getModuleNames');
 
         var config = new Config({});
-        var lentil = new Lentil({});
+        var gulp = require('gulp');
+        var lentil = new Lentil(gulp, {});
 
         expect(lentil.config).toEqual(config);
         expect(FileSystem.getModuleNames).toHaveBeenCalledWith(config);
@@ -29,7 +30,8 @@ describe('LentilSpec', function() {
             }
         };
 
-        var lentil = new Lentil(configObject);
+        var gulp = require('gulp');
+        var lentil = new Lentil(gulp, configObject);
 
         expect(lentil.parseModule('test')).toBeUndefined();
     });
@@ -46,7 +48,8 @@ describe('LentilSpec', function() {
             }
         };
 
-        var lentil = new Lentil(configObject);
+        var gulp = require('gulp');
+        var lentil = new Lentil(gulp, configObject);
 
         expect(lentil.parseLibs()).toBeUndefined();
     });
@@ -69,7 +72,8 @@ describe('LentilSpec', function() {
             }
         };
 
-        var lentil = new Lentil(configObject);
+        var gulp = require('gulp');
+        var lentil = new Lentil(gulp, configObject);
 
         spyOn(lentil, 'parseModule');
         spyOn(lentil, 'parseLibs');

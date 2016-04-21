@@ -20,7 +20,7 @@ describe('ingredients/angularSpec', function() {
             }
         });
 
-        expect(typeof angular(config, {
+        expect(typeof angular(require('gulp'), config, {
             name: 'test'
         })()).toEqual('object');
         expect(TaskRunner.paths.angular).toHaveBeenCalled();

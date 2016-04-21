@@ -13,7 +13,7 @@ describe('ingredients/angularTemplatesSpec', function() {
             }
         });
 
-        expect(typeof angularTemplates(config, {
+        expect(typeof angularTemplates(require('gulp'), config, {
             name: 'test'
         })(function() {
             expect(true).toBe(true);

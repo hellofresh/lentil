@@ -13,7 +13,7 @@ describe('ingredients/karmaSpec', function() {
             }
         });
 
-        expect(karma(config, {
+        expect(karma(require('gulp'), config, {
             singleRun: true,
             dryRun: true
         })).toEqual(jasmine.any(Function));

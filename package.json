@@ -1,6 +1,6 @@
 {
   "name": "hf-lentil",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Smart and modular gulp wrapper",
   "repository": {
     "type": "git",
@@ -33,7 +33,6 @@
     "gulp": "^3.9.0",
     "gulp-add-src": "^0.2.0",
     "gulp-angular-templatecache": "^1.8.0",
-    "gulp-arialinter": "0.0.1",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^1.0.1",
     "gulp-eslint": "^1.0.0",

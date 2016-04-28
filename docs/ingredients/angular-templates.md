@@ -4,7 +4,6 @@ This is actually part of another ingredient, a sub-ingredient. You could add thi
 
 The angular templates pipeline looks like this:
 
-- [HTMLHint](https://www.npmjs.com/package/gulp-htmlhint)
 - [Angular Templatecache](https://www.npmjs.com/package/gulp-angular-templatecache)
 
 ### Example configurations in the `gulpfile.js`
@@ -15,9 +14,6 @@ Default configuration:
 ```js
 new Lentil({
   plugins: {
-    htmlhint: {
-        'doctype-first': false
-    },
     angularTemplatecache: {
       module: 'lentil.{name}'.assign({
           name: options.name
@@ -35,9 +31,6 @@ Example configuration:
 ```js
 new Lentil({
   plugins: {
-    htmlhint: {
-      'tagname-lowercase': true
-    },
     angularTemplatecache: {
       transformUrl: function() {}
     }

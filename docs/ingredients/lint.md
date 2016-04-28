@@ -15,15 +15,6 @@ Default configuration:
 ```js
 new Lentil({
   plugins: {
-    eslint: {}
-  }
-});
-```
-
-Example configuration:
-```js
-new Lentil({
-  plugins: {
     htmlhint: {
       'tagname-lowercase': true
     },
@@ -36,7 +27,24 @@ new Lentil({
         'angular/module-getter': 0,
         'angular/controller-as': 0
       }
+    }
+  }
+});
+```
+
+Example configuration:
+```js
+new Lentil({
+  plugins: {
+    htmlhint: {
+      'tagname-lowercase': false
     },
+    eslint: {
+      plugins: [
+        'react'
+      ],
+      rules: {}
+    }
   }
 });
 ```

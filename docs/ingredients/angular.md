@@ -4,7 +4,6 @@ This is the ingredient for the `angular` compiling.
 
 The angular pipeline looks like this:
 
-- [ESLint](https://www.npmjs.com/package/gulp-eslint)
 - [Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
 - [NG Annotate](https://www.npmjs.com/package/gulp-ng-annotate)
 - [Concat](https://www.npmjs.com/package/gulp-concat)
@@ -17,15 +16,6 @@ Default configuration:
 ```js
 new Lentil({
   plugins: {
-    eslint: {
-        plugins: [
-            'angular'
-        ],
-        rules: {
-            'angular/module-setter': 0,
-            'angular/module-getter': 0
-        }
-    },
     ngAnnotate: {}
   }
 });
@@ -35,7 +25,6 @@ Example configuration:
 ```js
 new Lentil({
   plugins: {
-    eslint: require('./eslintconfig.json'),
     ngAnnotate: {
       single_quotes: true
     }

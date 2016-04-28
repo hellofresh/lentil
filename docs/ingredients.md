@@ -11,3 +11,4 @@ To read more about which plugins and how to configure them, read one of the foll
 * [Karma](ingredients/karma.md)
 * [Library files](ingredients/libs.md)
 * [SASS](ingredients/sass.md)
+* [Linting](ingredients/lint.md)

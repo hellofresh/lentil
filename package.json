@@ -30,7 +30,10 @@
   "homepage": "https://github.com/hellofresh/lentil",
   "dependencies": {
     "eslint": "^2.8.0",
+    "html-minifier": "^2.1.0",
     "htmlhint": "^0.9.12",
+    "multi-glob": "^1.0.1",
+    "mustache": "^2.2.1",
     "ng-annotate": "^1.2.1",
     "sugar": "^1.4.1",
     "uglify": "^0.1.5"

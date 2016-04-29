@@ -10,11 +10,6 @@ var lentil = new Lentil({
         tmp: __dirname + '/__test__/tmp',
         rootPrefix: '/'
     },
-    tasks: {
-        'js': 'js',
-        'app': 'angular',
-        'sass': 'sass'
-    },
     libs: {},
     karma: {
         configFile: __dirname + '/karma.conf.js',
@@ -29,8 +24,7 @@ var lentil = new Lentil({
     }
 });
 
-console.log(lentil);
+lentil.runModuleTask('test', 'angular');
 
-lentil.start();
 
 module.exports = Lentil;

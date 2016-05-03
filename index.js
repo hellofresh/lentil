@@ -34,7 +34,7 @@ lentil.runModuleTask('test', 'angular', {
 });
 lentil.runModuleTask('test', 'js');
 lentil.runModuleTask('test', 'sass', {
-    shouldMinify: false
+    shouldMinify: true
 });
 
 module.exports = Lentil;

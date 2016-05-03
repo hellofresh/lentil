@@ -1,1 +1,0 @@
-var app=angular.module("test",[]);app.controller("TestCtrl",["$location",function(t){}]),function(t){t.module("test").run(["$templateCache",function(t){t.put("/test.html","<p class=test ng-class=\"{ test: 'test' }\">test</p><h3>test</h3>")}])}(angular);

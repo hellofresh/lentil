@@ -39,7 +39,7 @@ lentil.watchModuleTask('test', 'js');
 // lentil.runModuleTask('test', 'sass', {
 //     shouldMinify: true
 // });
-
+lentil.watchModuleTask('', 'libs');
 // lentil.runLibsTask('test', {
 //     shouldMinify: true
 // });

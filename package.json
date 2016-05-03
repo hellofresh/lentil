@@ -31,6 +31,7 @@
   "dependencies": {
     "csso": "^2.0.0",
     "eslint": "^2.8.0",
+    "gaze": "^1.0.0",
     "html-minifier": "^2.1.0",
     "htmlhint": "^0.9.12",
     "multi-glob": "^1.0.1",

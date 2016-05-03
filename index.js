@@ -11,7 +11,11 @@ const lentil = new Lentil({
         tmp: __dirname + '/__test__/tmp',
         rootPrefix: '/'
     },
-    libs: {},
+    libs: {
+        'test': [
+            __dirname + '/__test__/libs/test.js'
+        ]
+    },
     karma: {
         configFile: __dirname + '/karma.conf.js',
     },
@@ -28,12 +32,15 @@ const lentil = new Lentil({
     }
 });
 
+// lentil.runModuleTask('test', 'angular', {
+//     shouldMinify: true
+// });
+// lentil.runModuleTask('test', 'js');
+// lentil.runModuleTask('test', 'sass', {
+//     shouldMinify: true
+// });
 
-lentil.runModuleTask('test', 'angular', {
-    shouldMinify: true
-});
-lentil.runModuleTask('test', 'js');
-lentil.runModuleTask('test', 'sass', {
+lentil.runLibsTask('test', {
     shouldMinify: true
 });
 

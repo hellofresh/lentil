@@ -29,10 +29,10 @@ const lentil = new Lentil({
 });
 
 
-// lentil.runModuleTask('test', 'angular', {
-//     shouldMinify: true
-// });
-// lentil.runModuleTask('test', 'js');
+lentil.runModuleTask('test', 'angular', {
+    shouldMinify: true
+});
+lentil.runModuleTask('test', 'js');
 lentil.runModuleTask('test', 'sass', {
     shouldMinify: false
 });

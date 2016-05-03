@@ -33,6 +33,8 @@ const lentil = new Lentil({
 //     shouldMinify: true
 // });
 // lentil.runModuleTask('test', 'js');
-lentil.runModuleTask('test', 'sass');
+lentil.runModuleTask('test', 'sass', {
+    shouldMinify: false
+});
 
 module.exports = Lentil;

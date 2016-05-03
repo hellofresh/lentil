@@ -1,0 +1,108 @@
+.something {
+  color: red;
+}
+
+.something {
+  color: blue;
+}
+
+/* line 3, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.home-banner {
+  position: relative;
+  border-bottom: 1px solid #F3F3F3;
+  background-repeat: no-repeat;
+  background-position: 25% center;
+  background-size: cover;
+  width: 100%;
+}
+
+/* line 12, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.home-banner-mobile {
+  border-bottom: 1px solid #F3F3F3;
+  background-repeat: no-repeat;
+  background-position: 25% center;
+  background-size: cover;
+  width: 100%;
+  min-height: 250px;
+}
+
+/* line 22, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.arrow-up:before {
+  top: -15px;
+  content: "";
+  border-style: solid;
+  border-width: 0px 15px 15px 15px;
+  border-color: transparent transparent #ffffff transparent;
+  position: absolute;
+  left: 15px;
+}
+
+/* line 33, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.bg-color-wrap {
+  background-color: #fffdf7;
+}
+
+/* line 39, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-details-wrapper {
+  padding-bottom: 20px;
+}
+
+/* line 42, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-details-wrapper .name {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+/* line 46, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-details-wrapper .prep-time {
+  margin-right: 0.5rem;
+}
+
+/* line 49, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-details-wrapper .fa-clock-o {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+/* line 58, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-ingredients {
+  position: relative;
+}
+
+/* line 61, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-ingredients h4 {
+  color: transparent;
+}
+
+/* line 65, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-ingredients:before {
+  position: absolute;
+  top: -1em;
+  right: 70px;
+  display: inline-block;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid;
+  border-left: 1em solid transparent;
+  content: '';
+}
+
+/* line 76, /Volumes/Dev/hellofresh/lentil/__test__/modules/test/sass/test.scss */
+
+.recipe-ingredients .close {
+  font-size: 2.5rem;
+  opacity: 0.5;
+  font-weight: normal;
+}

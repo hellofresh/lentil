@@ -18,12 +18,8 @@
     "modular"
   ],
   "main": "index.js",
-  "scripts": {
-    "test": "istanbul cover --include-all-sources jasmine-node __tests__",
-    "test-watch": "jasmine-node __tests__ --autotest --watch ."
-  },
   "author": "Pepijn Senders <ps@hellofresh.com>",
-  "license": "Creative Commons",
+  "license": "CC-BY-3.0",
   "bugs": {
     "url": "https://github.com/hellofresh/lentil/issues"
   },
@@ -45,7 +41,7 @@
     "tiny-human-time": "^1.2.0",
     "uglify": "^0.1.5"
   },
-  "devDependencies": {
-    "jasmine-es6": "^0.1.8"
+  "scripts": {
+    "eslint": "./node_modules/eslint/bin/eslint.js ./index.js lib/**/*.js"
   }
 }

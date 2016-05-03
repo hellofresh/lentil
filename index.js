@@ -17,7 +17,7 @@ const lentil = new Lentil({
         ]
     },
     karma: {
-        configFile: __dirname + '/karma.conf.js',
+        configFile: __dirname + '/karma.conf.js'
     },
     plugins: {
         Uglify: {

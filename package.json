@@ -35,7 +35,9 @@
     "multi-glob": "^1.0.1",
     "mustache": "^2.2.1",
     "ng-annotate": "^1.2.1",
+    "promise.prototype.finally": "^1.0.1",
     "sugar": "^1.4.1",
+    "tiny-human-time": "^1.2.0",
     "uglify": "^0.1.5"
   },
   "devDependencies": {

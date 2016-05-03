@@ -1,4 +1,5 @@
 require('sugar');
+require('promise.prototype.finally');
 
 const Lentil = require('./lib/Lentil');
 
@@ -15,6 +16,9 @@ var lentil = new Lentil({
         configFile: __dirname + '/karma.conf.js',
     },
     plugins: {
+        Uglify: {
+            test: true
+        },
         eslint: {
             baseConfig: {
                 extends: 'eslint:recommended'
@@ -25,6 +29,6 @@ var lentil = new Lentil({
 });
 
 lentil.runModuleTask('test', 'angular');
-
+lentil.runModuleTask('test', 'js');
 
 module.exports = Lentil;

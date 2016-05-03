@@ -40,7 +40,8 @@
     "rework-importer": "^0.4.0",
     "sugar": "^1.4.1",
     "tiny-human-time": "^1.2.0",
-    "uglify": "^0.1.5"
+    "uglify": "^0.1.5",
+    "yargs": "^4.6.0"
   },
   "scripts": {
     "eslint": "./node_modules/eslint/bin/eslint.js ./index.js lib/**/*.js"

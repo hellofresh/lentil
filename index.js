@@ -32,8 +32,4 @@ const lentil = new Lentil({
     }
 });
 
-global.LOG_LEVEL = 2;
-
-lentil.runModuleTask('test', 'angular');
-
 module.exports = Lentil;

@@ -32,16 +32,4 @@ const lentil = new Lentil({
     }
 });
 
-// lentil.runModuleTask('test', 'angular', {
-//     shouldMinify: true
-// });
-lentil.watchModuleTask('test', 'js');
-// lentil.runModuleTask('test', 'sass', {
-//     shouldMinify: true
-// });
-lentil.watchModuleTask('', 'libs');
-// lentil.runLibsTask('test', {
-//     shouldMinify: true
-// });
-
 module.exports = Lentil;

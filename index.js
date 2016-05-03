@@ -3,7 +3,7 @@ require('promise.prototype.finally');
 
 const Lentil = require('./lib/Lentil');
 
-var lentil = new Lentil({
+const lentil = new Lentil({
     paths: {
         modules: __dirname + '/__test__/modules',
         libs: __dirname + '/__test__/libs',
@@ -28,7 +28,11 @@ var lentil = new Lentil({
     }
 });
 
-lentil.runModuleTask('test', 'angular');
-lentil.runModuleTask('test', 'js');
+
+// lentil.runModuleTask('test', 'angular', {
+//     shouldMinify: true
+// });
+// lentil.runModuleTask('test', 'js');
+lentil.runModuleTask('test', 'sass');
 
 module.exports = Lentil;

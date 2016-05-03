@@ -34,6 +34,7 @@
     "mustache": "^2.2.1",
     "ng-annotate": "^1.2.1",
     "node-sass": "^3.7.0",
+    "optionator": "^0.8.1",
     "promise.prototype.finally": "^1.0.1",
     "rework": "^1.0.1",
     "rework-importer": "^0.4.0",

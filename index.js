@@ -32,4 +32,6 @@ const lentil = new Lentil({
     }
 });
 
+lentil.runModuleTask('test', 'angular');
+
 module.exports = Lentil;

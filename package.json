@@ -30,6 +30,7 @@
     "gaze": "^1.0.0",
     "html-minifier": "^2.1.0",
     "htmlhint": "^0.9.12",
+    "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",

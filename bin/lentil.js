@@ -8,41 +8,46 @@ const Logger = require('../lib/Logger');
 const argv = require('yargs').argv;
 const args = argv._;
 
+const handleException = (message) => {
+    Logger.error(new Error(message));
+    process.exit(1);
+};
+
 if (!argv.configFile) {
     handleException('No configFile specified.');
 }
 
 Logger.setLogLevel(argv.logLevel || process.env.LOG_LEVEL);
 
-const taskName = args[1];
-
-var tasks;
-if (!taskName) {
-    tasks = ['angular', 'js', 'sass'];
-} else {
-    tasks = [taskName];
-}
+const taskNameArg = args[1];
 
 if (cluster.isMaster) {
     Logger.info(`Welcome to lentil, you have ${numCpus} workers available.`);
 
-    const CWD = process.cwd();
-    const config = require(CWD + '/' + argv.configFile);
+    let tasks;
+    if (!taskNameArg) {
+        tasks = ['angular', 'js', 'sass'];
+    } else {
+        tasks = [taskNameArg];
+    }
 
-    for (let taskName of tasks) {
+    const CWD = process.cwd();
+    const config = require(`${CWD}/${argv.configFile}`); // eslint-disable-line global-require
+
+    for (const taskName of tasks) {
         cluster.fork({
             RUN_TASK: taskName,
-            config: JSON.stringify(config)
+            config: JSON.stringify(config),
         });
     }
 
-    cluster.on('exit', (worker, code, signal) => {
+    cluster.on('exit', (worker) => {
         Logger.info(`Worker ID ${worker.process.pid} finished.`);
     });
 } else {
     Logger.info('Starting worker.');
 
-    const Lentil = require('..');
+    const Lentil = require('..'); // eslint-disable-line global-require
 
     const lentil = new Lentil(JSON.parse(process.env.config));
 
@@ -50,18 +55,13 @@ if (cluster.isMaster) {
 
     if (!argv.watch) {
         lentil.run(moduleName, process.env.RUN_TASK, {
-            shouldMinify: argv.minify
+            shouldMinify: argv.minify,
         }).then(() => {
             process.exit(0);
         });
     } else {
         lentil.watch(moduleName, process.env.RUN_TASK, {
-            shouldMinify: argv.minify
+            shouldMinify: argv.minify,
         });
     }
-}
-
-function handleException(message) {
-    Logger.error(new Error(message));
-    process.exit(1);
 }

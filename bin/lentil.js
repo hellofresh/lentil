@@ -62,7 +62,7 @@ if (cluster.isMaster) {
         })
     ).then((result) => {
         const hasError = result.length && result.sum((worker) => {
-            return worker.errorCount;
+            return worker.errorCount || 0;
         }) > 0;
 
         if (hasError) {
@@ -92,6 +92,15 @@ if (cluster.isMaster) {
                 process.send({
                     event: 'finished',
                     errorCount: result.errorCount,
+                });
+            });
+        }).catch(() => {
+            process.nextTick(() => {
+                Logger.info(`Worker ID ${process.pid} finished with errors.`);
+
+                process.send({
+                    event: 'finished',
+                    errorCount: 1,
                 });
             });
         });

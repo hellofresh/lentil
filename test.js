@@ -13,10 +13,10 @@ const lentil = new Lentil({
             __dirname + '/__test__/libs/test.js'
         ]
     },
-    karma: {
-        configFile: __dirname + '/karma.conf.js'
-    },
     plugins: {
+        Karma: {
+            configFile: __dirname + '/__test__/karma.conf.js'
+        },
         eslint: {
             baseConfig: {
                 extends: 'eslint:recommended'
@@ -26,22 +26,24 @@ const lentil = new Lentil({
     }
 });
 
-lentil.runModuleTask('test', 'angular');
-lentil.runModuleTask('test', 'angular', {
-    shouldMinify: true
-});
+lentil.watchModuleTask('test', 'karma');
 
-lentil.runModuleTask('test', 'js');
-lentil.runModuleTask('test', 'js', {
-    shouldMinify: true
-});
-
-lentil.runModuleTask('test', 'sass');
-lentil.runModuleTask('test', 'sass', {
-    shouldMinify: true
-});
-
-lentil.runModuleTask('', 'libs');
-lentil.runModuleTask('', 'libs', {
-    shouldMinify: true
-});
+// lentil.runModuleTask('test', 'angular');
+// lentil.runModuleTask('test', 'angular', {
+//     shouldMinify: true
+// });
+//
+// lentil.runModuleTask('test', 'js');
+// lentil.runModuleTask('test', 'js', {
+//     shouldMinify: true
+// });
+//
+// lentil.runModuleTask('test', 'sass');
+// lentil.runModuleTask('test', 'sass', {
+//     shouldMinify: true
+// });
+//
+// lentil.runModuleTask('', 'libs');
+// lentil.runModuleTask('', 'libs', {
+//     shouldMinify: true
+// });

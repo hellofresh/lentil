@@ -5,4 +5,6 @@ var person = {
     eyecolor: 'blue'
 };
 
-document.getElementById('demo').innerHTML = person['firstname'] + ' is ' + person['age'] + ' years old.';
+if (document.getElementById('demo')) {
+    document.getElementById('demo').innerHTML = person['firstname'] + ' is ' + person['age'] + ' years old.';
+}

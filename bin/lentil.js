@@ -1,22 +1,61 @@
 #!/usr/bin/env node
 
-const Lentil = require('..');
+const cluster = require('cluster');
+const numCpus = require('os').cpus().length;
 const Logger = require('../lib/Logger');
+
 
 const argv = require('yargs').argv;
 const args = argv._;
 
-const CWD = process.cwd();
+if (!argv.configFile) {
+    handleException('No configFile specified.');
+}
 
 Logger.setLogLevel(argv.logLevel || process.env.LOG_LEVEL);
 
-const moduleName = args[0];
 const taskName = args[1];
 
-var config = require(CWD + '/' + argv.configFile);
+var tasks;
+if (!taskName) {
+    tasks = ['angular', 'js', 'sass'];
+} else {
+    tasks = [taskName];
+}
 
-const lentil = new Lentil(config);
+if (cluster.isMaster) {
+    Logger.info(`Welcome to lentil, you have ${numCpus} workers available.`);
 
-lentil.run(moduleName, taskName, {
-    shouldMinify: argv.minify
-});
+    const CWD = process.cwd();
+    const config = require(CWD + '/' + argv.configFile);
+
+    for (let taskName of tasks) {
+        cluster.fork({
+            RUN_TASK: taskName,
+            config: JSON.stringify(config)
+        });
+    }
+
+    cluster.on('exit', (worker, code, signal) => {
+        Logger.info(`Worker ID ${worker.process.pid} finished.`);
+    });
+} else {
+    Logger.info('Starting worker.');
+
+    const Lentil = require('..');
+
+    const lentil = new Lentil(JSON.parse(process.env.config));
+
+    const moduleName = args[0];
+
+    lentil.run(moduleName, process.env.RUN_TASK, {
+        shouldMinify: argv.minify
+    }).then(() => {
+        process.exit(0);
+    });
+}
+
+function handleException(message) {
+    Logger.error(new Error(message));
+    process.exit(1);
+}

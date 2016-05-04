@@ -5,7 +5,6 @@ const lentil = new Lentil({
         modules: __dirname + '/modules',
         libs: __dirname + '/libs',
         dist: __dirname + '/dist',
-        tmp: __dirname + '/tmp',
         rootPrefix: '/'
     },
     libs: {
@@ -26,24 +25,16 @@ const lentil = new Lentil({
     }
 });
 
-lentil.run('test', 'karma');
+const testModuleTasks = ['angular', 'js', 'sass'];
 
-// lentil.run('test', 'angular');
-// lentil.run('test', 'angular', {
-//     shouldMinify: true
-// });
-//
-// lentil.run('test', 'js');
-// lentil.run('test', 'js', {
-//     shouldMinify: true
-// });
-//
-// lentil.run('test', 'sass');
-// lentil.run('test', 'sass', {
-//     shouldMinify: true
-// });
-//
-// lentil.run('', 'libs');
-// lentil.run('', 'libs', {
-//     shouldMinify: true
-// });
+for (let task of testModuleTasks) {
+    lentil.run('test', task);
+    lentil.run('test', task, {
+        shouldMinify: true
+    });
+}
+
+lentil.run('', 'libs');
+lentil.run('', 'libs', {
+    shouldMinify: true
+});

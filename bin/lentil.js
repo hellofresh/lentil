@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require('sugar');
 
 const cluster = require('cluster');
 const numCpus = require('os').cpus().length;
@@ -8,6 +9,14 @@ const Logger = require('../lib/Logger');
 const argv = require('yargs').argv;
 const args = argv._;
 
+if (Number.isInteger(argv.logLevel)) {
+    Logger.setLogLevel(argv.logLevel);
+} else if (Number.isInteger(process.env.LOG_LEVEL)) {
+    Logger.setLogLevel(process.env.LOG_LEVEL);
+} else {
+    Logger.setLogLevel(2);
+}
+
 const handleException = (message) => {
     Logger.error(new Error(message));
     process.exit(1);
@@ -16,8 +25,6 @@ const handleException = (message) => {
 if (!argv.configFile) {
     handleException('No configFile specified.');
 }
-
-Logger.setLogLevel(argv.logLevel || process.env.LOG_LEVEL);
 
 const taskNameArg = args[1];
 
@@ -34,15 +41,37 @@ if (cluster.isMaster) {
     const CWD = process.cwd();
     const config = require(`${CWD}/${argv.configFile}`); // eslint-disable-line global-require
 
-    for (const taskName of tasks) {
-        cluster.fork({
-            RUN_TASK: taskName,
-            config: JSON.stringify(config),
-        });
-    }
+    Promise.all(
+        tasks.map((taskName) => {
+            return new Promise((resolve, reject) => {
+                const worker = cluster.fork({
+                    RUN_TASK: taskName,
+                    config: JSON.stringify(config),
+                });
 
-    cluster.on('exit', (worker) => {
-        Logger.info(`Worker ID ${worker.process.pid} finished.`);
+                worker.on('message', (data) => {
+                    worker.kill('SIGTERM');
+
+                    if (data.event === 'finished') {
+                        resolve(data);
+                    } else {
+                        reject(data);
+                    }
+                });
+            });
+        })
+    ).then((result) => {
+        const hasError = result.length && result.sum((worker) => {
+            return worker.errorCount;
+        }) > 0;
+
+        if (hasError) {
+            process.exit(1);
+        } else {
+            process.exit(0);
+        }
+    }).catch((err) => {
+        Logger.error(err);
     });
 } else {
     Logger.info('Starting worker.');
@@ -56,8 +85,15 @@ if (cluster.isMaster) {
     if (!argv.watch) {
         lentil.run(moduleName, process.env.RUN_TASK, {
             shouldMinify: argv.minify,
-        }).then(() => {
-            process.exit(0);
+        }).then((result = {}) => {
+            process.nextTick(() => {
+                Logger.info(`Worker ID ${process.pid} finished.`);
+
+                process.send({
+                    event: 'finished',
+                    errorCount: result.errorCount,
+                });
+            });
         });
     } else {
         lentil.watch(moduleName, process.env.RUN_TASK, {

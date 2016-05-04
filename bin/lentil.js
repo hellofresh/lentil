@@ -17,6 +17,6 @@ var config = require(CWD + '/' + argv.configFile);
 
 const lentil = new Lentil(config);
 
-lentil.runModuleTask(moduleName, taskName, {
+lentil.run(moduleName, taskName, {
     shouldMinify: argv.minify
 });

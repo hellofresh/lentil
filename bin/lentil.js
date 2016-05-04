@@ -48,11 +48,17 @@ if (cluster.isMaster) {
 
     const moduleName = args[0];
 
-    lentil.run(moduleName, process.env.RUN_TASK, {
-        shouldMinify: argv.minify
-    }).then(() => {
-        process.exit(0);
-    });
+    if (!argv.watch) {
+        lentil.run(moduleName, process.env.RUN_TASK, {
+            shouldMinify: argv.minify
+        }).then(() => {
+            process.exit(0);
+        });
+    } else {
+        lentil.watch(moduleName, process.env.RUN_TASK, {
+            shouldMinify: argv.minify
+        });
+    }
 }
 
 function handleException(message) {

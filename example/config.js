@@ -2,9 +2,7 @@ module.exports = {
     paths: {
         modules: __dirname + '/modules',
         libs: __dirname + '/libs',
-        dist: __dirname + '/dist',
-        templates: __dirname + '/templates',
-        rootPrefix: '/'
+        dist: __dirname + '/dist'
     },
     libs: {
         'test': [

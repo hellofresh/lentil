@@ -42,28 +42,26 @@ if (cluster.isMaster) {
     const config = require(`${CWD}/${argv.configFile}`); // eslint-disable-line global-require
 
     Promise.all(
-        tasks.map((taskName) => {
-            return new Promise((resolve, reject) => {
-                const worker = cluster.fork({
-                    RUN_TASK: taskName,
-                    config: JSON.stringify(config),
-                });
-
-                worker.on('message', (data) => {
-                    worker.kill('SIGTERM');
-
-                    if (data.event === 'finished') {
-                        resolve(data);
-                    } else {
-                        reject(data);
-                    }
-                });
+        tasks.map((taskName) => new Promise((resolve, reject) => {
+            const worker = cluster.fork({
+                RUN_TASK: taskName,
+                config: JSON.stringify(config),
             });
-        })
+
+            worker.on('message', (data) => {
+                worker.kill('SIGTERM');
+
+                if (data.event === 'finished') {
+                    resolve(data);
+                } else {
+                    reject(data);
+                }
+            });
+        }))
     ).then((result) => {
-        const hasError = result.length && result.sum((worker) => {
-            return worker.errorCount || 0;
-        }) > 0;
+        const hasError = result.length && result.sum(
+            (worker) => worker.errorCount || 0
+        ) > 0;
 
         if (hasError) {
             process.exit(1);

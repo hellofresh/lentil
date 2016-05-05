@@ -9,7 +9,7 @@ module.exports = {
             __dirname + '/libs/test.js'
         ]
     },
-    plugins: {
+    ingredients: {
         Karma: {
             configFile: __dirname + '/karma.conf.js'
         },

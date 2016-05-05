@@ -3,7 +3,7 @@ module.exports = {
         modules: __dirname + '/modules',
         libs: __dirname + '/libs',
         dist: __dirname + '/dist',
-        tmp: __dirname + '/tmp',
+        templates: __dirname + '/templates',
         rootPrefix: '/'
     },
     libs: {
@@ -11,11 +11,11 @@ module.exports = {
             __dirname + '/libs/test.js'
         ]
     },
-    karma: {
-        configFile: __dirname + '/karma.conf.js'
-    },
     plugins: {
-        eslint: {
+        Karma: {
+            configFile: __dirname + '/karma.conf.js'
+        },
+        ESLint: {
             baseConfig: {
                 extends: 'eslint:recommended'
             },

@@ -38,3 +38,5 @@ lentil.run('', 'libs');
 lentil.run('', 'libs', {
     shouldMinify: true
 });
+
+lentil.run('test', 'karma');

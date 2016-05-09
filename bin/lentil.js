@@ -6,7 +6,6 @@ const fs = require('fs');
 const path = require('path');
 const numCpus = require('os').cpus().length;
 const Logger = require('../lib/Logger');
-const FileSystem = require('../lib/FileSystem');
 const Command = require('../lib/Command');
 const CommandsRunner = require('../lib/CommandsRunner');
 
@@ -24,15 +23,17 @@ Logger.setLogLevel(argv.logLevel);
 
 let modules;
 if (!args[0]) {
+    let modulesPath;
+
     try {
-        var modulesPath = config.paths.modules;
+        modulesPath = config.paths.modules;
     } catch (e) {
         throw new Error('Path to modules not defined in configuration.');
     }
 
-    const availableModules = fs.readdirSync(modulesPath).filter(function(file) {
-        return fs.statSync(path.join(modulesPath, file)).isDirectory();
-    });
+    const availableModules = fs.readdirSync(modulesPath).filter(
+        (file) => fs.statSync(path.join(modulesPath, file)).isDirectory()
+    );
 
     modules = availableModules;
 } else {
@@ -106,8 +107,9 @@ if (cluster.isMaster) {
                     process.send({
                         event: 'finished',
                         errorCount: results.count(
-                            (result) =>
-                                result ? result.errorCount : 0
+                            (result) => { // eslint-disable-line
+                                return result ? result.errorCount : 0;
+                            }
                         ),
                     });
                 });
@@ -118,7 +120,7 @@ if (cluster.isMaster) {
 
                     process.send({
                         event: 'finished',
-                        errorCount: 1
+                        errorCount: 1,
                     });
                 });
             });

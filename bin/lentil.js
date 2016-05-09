@@ -33,7 +33,7 @@ if (cluster.isMaster) {
 
     let tasks;
     if (!taskNameArg) {
-        tasks = ['angular', 'js', 'sass', 'lint', 'karma'];
+        tasks = ['angular', 'js', 'sass'];
     } else {
         tasks = [taskNameArg];
     }

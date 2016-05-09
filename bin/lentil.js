@@ -34,7 +34,7 @@ if (!args[0]) {
         return fs.statSync(path.join(modulesPath, file)).isDirectory();
     });
 
-    modules = [availableModules];
+    modules = availableModules;
 } else {
     modules = [args[0]];
 }
@@ -91,9 +91,36 @@ if (cluster.isMaster) {
 
     const rawCommands = JSON.parse(process.env.commands);
 
-    for (let rawCommand of rawCommands) {
+    const deferredArray = rawCommands.map((rawCommand) => {
         const command = Command.ofRaw(rawCommand);
 
-        command.run();
+        return command.run();
+    });
+
+    if (!argv.watch) {
+        Promise.all(deferredArray)
+            .then((results) => {
+                process.nextTick(() => {
+                    Logger.info(`Worker ID ${process.pid} finished.`);
+
+                    process.send({
+                        event: 'finished',
+                        errorCount: results.count(
+                            (result) =>
+                                result ? result.errorCount : 0
+                        ),
+                    });
+                });
+            })
+            .catch(() => {
+                process.nextTick(() => {
+                    Logger.info(`Worker ID ${process.pid} finished.`);
+
+                    process.send({
+                        event: 'finished',
+                        errorCount: 1
+                    });
+                });
+            });
     }
 }

@@ -50,7 +50,7 @@
     "rework-importer": "^0.4.0",
     "sugar": "^1.4.1",
     "tiny-human-time": "^1.2.0",
-    "uglify": "^0.1.5",
+    "uglify-js": "^2.6.2",
     "yargs": "^4.6.0"
   },
   "scripts": {

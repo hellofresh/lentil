@@ -21,7 +21,8 @@ const config = require(`${CWD}/${argv.configFile}`); // eslint-disable-line glob
 
 Logger.setLogLevel(argv.logLevel);
 
-let tasks, modules;
+let tasks;
+let modules;
 if (!!~['libs', 'karma'].indexOf(args[0])) {
     tasks = [args[0]];
     modules = ['all'];

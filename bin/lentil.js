@@ -21,30 +21,34 @@ const config = require(`${CWD}/${argv.configFile}`); // eslint-disable-line glob
 
 Logger.setLogLevel(argv.logLevel);
 
-let modules;
-if (!args[0]) {
-    let modulesPath;
+let tasks, modules;
+if (!!~['libs', 'karma'].indexOf(args[0])) {
+    tasks = [args[0]];
+    modules = ['all'];
+} else {
+    if (!args[0] || args[0] === 'all') {
+        let modulesPath;
 
-    try {
-        modulesPath = config.paths.modules;
-    } catch (e) {
-        throw new Error('Path to modules not defined in configuration.');
+        try {
+            modulesPath = config.paths.modules;
+        } catch (e) {
+            throw new Error('Path to modules not defined in configuration.');
+        }
+
+        const availableModules = fs.readdirSync(modulesPath).filter(
+            (file) => fs.statSync(path.join(modulesPath, file)).isDirectory()
+        );
+
+        modules = availableModules;
+    } else {
+        modules = [args[0]];
     }
 
-    const availableModules = fs.readdirSync(modulesPath).filter(
-        (file) => fs.statSync(path.join(modulesPath, file)).isDirectory()
-    );
-
-    modules = availableModules;
-} else {
-    modules = [args[0]];
-}
-
-let tasks;
-if (!args[1]) {
-    tasks = ['angular', 'js', 'sass'];
-} else {
-    tasks = [args[1]];
+    if (!args[1]) {
+        tasks = ['angular', 'js', 'sass'];
+    } else {
+        tasks = [args[1]];
+    }
 }
 
 if (cluster.isMaster) {

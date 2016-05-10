@@ -55,5 +55,8 @@
   },
   "scripts": {
     "eslint": "./node_modules/eslint/bin/eslint.js ./index.js lib/**/*.js ./bin/lentil.js"
+  },
+  "engines": {
+    "node": ">= 6.1.0"
   }
 }

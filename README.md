@@ -13,6 +13,8 @@
 
 ```bash
 $ npm install --save lentil@git+ssh://git@github.com/hellofresh/lentil.git
+
+$ npm install -g lentil@git+ssh://git@github.com/hellofresh/lentil.git
 ```
 
 ## What is Lentil?

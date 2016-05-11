@@ -105,32 +105,31 @@ Learn by example:
 ```
 ├── lentil-config.js
 ├── modules/
-|   ├── modules/
-|   |   ├── base/
-|   |   |   ├── sass/
-|   |   |   |   ├── base.scss
-|   |   ├── product/
-|   |   |   ├── app/
-|   |   |   |   ├── app.js
-|   |   |   |   ├── ProductCtrl.js
-|   |   |   |   ├── ProductFactory.js
-|   |   |   ├── templates/
-|   |   |   |   ├── product.html
-|   |   |   ├── tests/  
-|   |   |   |   ├── ProductCtrlSpec.js
-|   |   |   |   ├── ProductFactorySpec.js
-|   |   ├── shop/
-|   |   |   ├── app/
-|   |   |   |   ├── app.js
-|   |   |   |   ├── components/
-|   |   |   |   |   ├── SubscribeComponent.js
-|   |   |   ├── tests/
-|   |   |   |   ├── components/
-|   |   |   |   |   ├── SubscribeComponentSpec.js
-|   |   |   ├── sass/
-|   |   |   |   ├── shop.scss
-|   |   |   |   ├── components/
-|   |   |   |   |   ├── _subscribe.scss
+|   ├── base/
+|   |   ├── sass/
+|   |   |   ├── base.scss
+|   ├── product/
+|   |   ├── app/
+|   |   |   ├── app.js
+|   |   |   ├── ProductCtrl.js
+|   |   |   ├── ProductFactory.js
+|   |   ├── templates/
+|   |   |   ├── product.html
+|   |   ├── tests/  
+|   |   |   ├── ProductCtrlSpec.js
+|   |   |   ├── ProductFactorySpec.js
+|   ├── shop/
+|   |   ├── app/
+|   |   |   ├── app.js
+|   |   |   ├── components/
+|   |   |   |   ├── SubscribeComponent.js
+|   |   ├── tests/
+|   |   |   ├── components/
+|   |   |   |   ├── SubscribeComponentSpec.js
+|   |   ├── sass/
+|   |   |   ├── shop.scss
+|   |   |   ├── components/
+|   |   |   |   ├── _subscribe.scss
 ```
 
 Simple as that!

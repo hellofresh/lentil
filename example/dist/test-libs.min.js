@@ -1,0 +1,3 @@
+var LIBS = {
+    name: 'test'
+};

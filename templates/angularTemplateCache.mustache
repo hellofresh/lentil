@@ -1,0 +1,8 @@
+(function(angular) {
+    angular.module('{{moduleName}}')
+        .run(function($templateCache) {
+            {{#templates}}
+            $templateCache.put('{{{url}}}', '{{{content}}}');
+            {{/templates}}
+        });
+}(angular));

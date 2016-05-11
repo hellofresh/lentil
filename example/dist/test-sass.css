@@ -1,0 +1,21 @@
+.something {
+  color: red;
+}
+
+.something {
+  color: blue;
+}
+
+/* line 3, /Volumes/Dev/hellofresh/lentil/example/modules/test/sass/test.scss */
+
+.container {
+  width: 100px;
+}
+
+/* line 7, /Volumes/Dev/hellofresh/lentil/example/modules/test/sass/test.scss */
+
+.container {
+  color: blue;
+}
+
+/*# sourceMappingURL=test.scss */

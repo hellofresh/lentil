@@ -1,6 +1,6 @@
 {
-  "name": "hf-lentil",
-  "version": "1.4.1",
+  "name": "lentil",
+  "version": "2.1.0",
   "description": "Smart and modular gulp wrapper",
   "repository": {
     "type": "git",
@@ -17,46 +17,47 @@
     "lentil",
     "modular"
   ],
-  "main": "lib/Lentil.js",
-  "scripts": {
-    "test": "istanbul cover --include-all-sources jasmine-node __tests__",
-    "test-watch": "jasmine-node __tests__ --autotest --watch ."
-  },
+  "main": "index.js",
   "author": "Pepijn Senders <ps@hellofresh.com>",
-  "license": "Creative Commons",
+  "license": "CC-BY-3.0",
   "bugs": {
     "url": "https://github.com/hellofresh/lentil/issues"
   },
   "homepage": "https://github.com/hellofresh/lentil",
   "dependencies": {
-    "eslint-plugin-angular": "^0.13.0",
-    "event-stream": "^3.3.2",
-    "gulp": "^3.9.0",
-    "gulp-add-src": "^0.2.0",
-    "gulp-angular-templatecache": "^1.8.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-csso": "^1.0.1",
-    "gulp-eslint": "^1.0.0",
-    "gulp-htmlhint": "^0.3.0",
-    "gulp-import-css": "^0.1.2",
-    "gulp-load-plugins": "^1.0.0",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-ng-annotate": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.0",
-    "gulp-size": "^2.0.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-task-listing": "^1.0.1",
-    "gulp-uglify": "^1.4.2",
-    "gulp-util": "^3.0.7",
-    "htmlhint-stylish": "^1.0.3",
-    "karma": "^0.13.15",
-    "path": "^0.12.7",
-    "q": "^1.4.1",
-    "sugar": "^1.4.1"
+    "csso": "^2.0.0",
+    "easy-table": "^1.0.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.6.1",
+    "eslint-plugin-jsx-a11y": "^1.0.4",
+    "eslint-plugin-react": "^5.0.1",
+    "gaze": "^1.0.0",
+    "globby": "^4.0.0",
+    "html-minifier": "^2.1.0",
+    "htmlhint": "^0.9.12",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "mustache": "^2.2.1",
+    "ng-annotate": "^1.2.1",
+    "node-sass": "^3.7.0",
+    "optionator": "^0.8.1",
+    "phantomjs-prebuilt": "git@github.com:Medium/phantomjs.git#v2.1.7",
+    "promise.prototype.finally": "^1.0.1",
+    "rework": "^1.0.1",
+    "rework-importer": "^0.4.0",
+    "sugar": "^1.4.1",
+    "tiny-human-time": "^1.2.0",
+    "uglify-js": "^2.6.2",
+    "yargs": "^4.6.0"
   },
-  "devDependencies": {
-    "istanbul": "^0.4.0",
-    "jasmine-node": "^1.14.5"
+  "scripts": {
+    "eslint": "./node_modules/eslint/bin/eslint.js ./index.js lib/**/*.js ./bin/lentil.js"
+  },
+  "engines": {
+    "node": ">= 6.1.0"
   }
 }

@@ -1,0 +1,11 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }]
+    },
+    "env": {
+        "node": true,
+        "browser": false,
+        "es6": true
+    }
+}

@@ -55,8 +55,12 @@ if (!!~['libs', 'karma'].indexOf(args[0])) {
 if (cluster.isMaster) {
     Logger.info(`Welcome to lentil, you have ${numCpus} workers available.`);
 
+    if (argv.deploy) {
+        argv.watch = false;
+    }
+
     const commandsRunner = new CommandsRunner(modules, tasks, {
-        deploy: argv.deploy
+        deploy: argv.deploy,
     });
 
     const commands = commandsRunner.seedCommands(numCpus, argv, config);

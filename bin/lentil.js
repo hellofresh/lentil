@@ -63,7 +63,7 @@ if (cluster.isMaster) {
         deploy: argv.deploy,
     });
 
-    const commands = commandsRunner.seedCommands(numCpus, argv, config);
+    const commands = commandsRunner.seedCommands(numCpus, argv);
 
     Promise.all(
         commands.filter(
@@ -104,7 +104,7 @@ if (cluster.isMaster) {
     const rawCommands = JSON.parse(process.env.commands);
 
     const deferredArray = rawCommands.map((rawCommand) => {
-        const command = Command.ofRaw(rawCommand);
+        const command = Command.ofRaw(rawCommand, config);
 
         return command.run();
     });

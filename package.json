@@ -1,6 +1,6 @@
 {
   "name": "lentil",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Smart and modular gulp wrapper",
   "repository": {
     "type": "git",

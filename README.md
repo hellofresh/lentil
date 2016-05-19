@@ -63,6 +63,8 @@ What this command will do is compile all the available modules. To make it more 
 $ lentil {moduleName} {taskName} --configFile lentil-config.js
 ```
 
+> `taskName` could also be a comma separated list, for example: lint,angular
+
 But person who built this awesome compiler, who do I compile my libs, or lint or test my javascript files. Well like this:
 
 ```bash

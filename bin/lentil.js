@@ -48,7 +48,7 @@ if (!!~['libs', 'karma'].indexOf(args[0])) {
     if (!args[1]) {
         tasks = ['angular', 'js', 'sass'];
     } else {
-        tasks = [args[1]];
+        tasks = args[1].split(',');
     }
 }
 

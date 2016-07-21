@@ -10,6 +10,7 @@ module.exports = {
         ]
     },
     ingredients: {
+        Babel: {},
         Karma: {
             configFile: __dirname + '/karma.conf.js'
         },

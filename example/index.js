@@ -13,6 +13,7 @@ const lentil = new Lentil({
         ]
     },
     plugins: {
+        Babel: {},
         Karma: {
             configFile: __dirname + '/karma.conf.js'
         },
@@ -33,6 +34,8 @@ for (let task of testModuleTasks) {
         shouldMinify: true
     });
 }
+
+lentil.run('es6', 'js', { babel: true });
 
 lentil.run('', 'libs');
 lentil.run('', 'libs', {

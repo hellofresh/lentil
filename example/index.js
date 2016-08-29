@@ -29,8 +29,9 @@ const lentil = new Lentil({
 const testModuleTasks = ['angular', 'js', 'sass'];
 
 for (let task of testModuleTasks) {
-    lentil.run('test', task);
+    lentil.run('test', task, { babel: true });
     lentil.run('test', task, {
+        babel: true,
         shouldMinify: true
     });
 }

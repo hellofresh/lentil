@@ -8,5 +8,4 @@ var angular = {
 
 var app = angular.module('test', []);
 
-app.controller('TestCtrl', function($location) {
-});
+app.controller('TestCtrl', $location => $location);

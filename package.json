@@ -1,6 +1,6 @@
 {
   "name": "lentil",
-  "version": "2.5.4",
+  "version": "3.0.2",
   "description": "Smart and modular gulp wrapper",
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   "main": "index.js",
   "author": "Pepijn Senders <ps@hellofresh.com>",
   "license": "CC-BY-3.0",
+  "bin": {
+    "lentil": "bin/lentil.js"
+  },
   "bugs": {
     "url": "https://github.com/hellofresh/lentil/issues"
   },

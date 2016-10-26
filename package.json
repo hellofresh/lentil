@@ -20,6 +20,9 @@
   "main": "index.js",
   "author": "Pepijn Senders <ps@hellofresh.com>",
   "license": "CC-BY-3.0",
+  "bin": {
+    "lentil": "bin/lentil.js"
+  },
   "bugs": {
     "url": "https://github.com/hellofresh/lentil/issues"
   },
